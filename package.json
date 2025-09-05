@@ -1,3 +1,4 @@
+"homepage": "https://BishakaDhamala.github.io/NextGenShe"
 {
   "name": "nextgenshe",
   "version": "0.1.0",
@@ -15,6 +16,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
