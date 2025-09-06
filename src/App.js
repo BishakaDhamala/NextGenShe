@@ -47,332 +47,455 @@ function App() {
 
   const resources = useMemo(() => [
     {
-      id: "tpo",
-      name: "TPO Nepal",
-      description: "Dedicated to providing free, compassionate and confidential support by phone and text message (SMS). For everyone in Nepal who may need emotional support with anxiety, bullying, depression, self-harm, sexual abuse.",
-      url: "https://www.tponepal.org",
-      category: "health",
-      scope: "local",
+    id: "tpo",
+    name: "TPO Nepal",
+    description: {
+      EN: "Dedicated to providing free, compassionate and confidential support by phone and text message (SMS). For everyone in Nepal who may need emotional support with anxiety, bullying, depression, self-harm, sexual abuse.",
+      NP: "फोन र टेक्स्ट सन्देश (एसएमएस) मार्फत नि:शुल्क, सहानुभूति र गोपनीय समर्थन प्रदान गर्न समर्पित। नेपालमा जो कोहीलाई चिन्ता, धम्की, डिप्रेसन, आत्म-हानि, यौन दुरुपयोगको लागि मनोवैज्ञानिक समर्थन आवश्यक छ।"
     },
+    url: "https://www.tponepal.org",
+    category: "health",
+    scope: "local",
+  },
     {
-      id: "koshish",
-      name: "KOSHISH Nepal",
-      description: "Self-help and advocacy for mental health; rehabilitation and counseling.",
-      url: "https://koshishnepal.org/",
-      category: "health2",
-      scope: "local",
+    id: "koshish",
+    name: "KOSHISH Nepal",
+    description: {
+      EN: "Self-help and advocacy for mental health; rehabilitation and counseling.",
+      NP: "आत्म-सहायता र मानसिक स्वास्थ्यका लागि वकालत; पुनर्स्थापना र परामर्श।"
     },
-    {
-      id: "msi",
-      name: "Marie Stopes Nepal",
-      description: "Reproductive health services and education across Nepal.",
-      url: "https://www.mariestopes.org.np/",
-      category: "health",
-      scope: "local",
+    url: "https://koshishnepal.org/",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "msi",
+    name: "Marie Stopes Nepal",
+    description: {
+      EN: "Reproductive health services and education across Nepal.",
+      NP: "नेपालभर प्रजनन स्वास्थ्य सेवा र शिक्षा।"
     },
-    {
-      id: "mantracare",
-      name: "MantraCare Nepal",
-      description: "Mental health counseling and wellness services.",
-      url: "https://mantra.care/nepal/",
-      category: "health",
-      scope: "local",
+    url: "https://www.mariestopes.org.np/",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "mantracare",
+    name: "MantraCare Nepal",
+    description: {
+      EN: "Mental health counseling and wellness services.",
+      NP: "मानसिक स्वास्थ्य परामर्श र कल्याण सेवा।"
     },
-    {
-      id: "sano",
-      name: "Sano Sansar Initiative",
-      description: "Youth-led organization for environment, health, and sustainability.",
-      url: "https://www.sanosansar.org",
-      category: "education",
-      scope: "local",
+    url: "https://mantra.care/nepal/",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "sano",
+    name: "Sano Sansar Initiative",
+    description: {
+      EN: "Youth-led organization for environment, health, and sustainability.",
+      NP: "पर्यावरण, स्वास्थ्य, र स्थिरताका लागि युवाहरू नेतृत्व गरेको संस्था।"
     },
-    {
-      id: "nepalmental",
-      name: "Nepal Mental Health",
-      description: "Information and resources for mental health awareness and services in Nepal.",
-      url: "https://nepalmentalhealth.com",
-      category: "health",
-      scope: "local",
+    url: "https://www.sanosansar.org",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "nepalmental",
+    name: "Nepal Mental Health",
+    description: {
+      EN: "Information and resources for mental health awareness and services in Nepal.",
+      NP: "नेपालमा मानसिक स्वास्थ्य सचेतना र सेवाहरूको जानकारी र स्रोतहरू।"
     },
-    {
-      id: "cmc",
-      name: "CMC Nepal",
-      description: "Community mental health services including counseling and psychosocial programs.",
-      url: "https://cmcnepal.org.np",
-      category: "health",
-      scope: "local",
+    url: "https://nepalmentalhealth.com",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "cmc",
+    name: "CMC Nepal",
+    description: {
+      EN: "Community mental health services including counseling and psychosocial programs.",
+      NP: "सल्लाहकार र मनो सामाजिक कार्यक्रमहरू सहित सामुदायिक मानसिक स्वास्थ्य सेवा।"
     },
-    {
-      id: "life",
-      name: "LIFE Nepal",
-      description: "Child rights, education, and health projects in Nepal.",
-      url: "https://lifenepal.org.np/about-us/",
-      category: "education",
-      scope: "local",
+    url: "https://cmcnepal.org.np",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "life",
+    name: "LIFE Nepal",
+    description: {
+      EN: "Child rights, education, and health projects in Nepal.",
+      NP: "नेपालमा बाल अधिकार, शिक्षा, र स्वास्थ्य परियोजनाहरू।"
     },
-    {
-      id: "mankaakura",
-      name: "Mankaakura",
-      description: "Counseling and mental health support for Nepalis.",
-      url: "https://mankaakura.com/our-counselors/",
-      category: "health",
-      scope: "local",
+    url: "https://lifenepal.org.np/about-us/",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "mankaakura",
+    name: "Mankaakura",
+    description: {
+      EN: "Counseling and mental health support for Nepalis.",
+      NP: "नेपालीहरूको लागि परामर्श र मानसिक स्वास्थ्य सहयोग।"
     },
-    {
-      id: "healthy",
-      name: "Healthy Minds Nepal",
-      description: "Nepali-led organization building a supportive mental health ecosystem.",
-      url: "https://healthyminds.com.np/our-team/",
-      category: "health",
-      scope: "local",
+    url: "https://mankaakura.com/our-counselors/",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "healthy",
+    name: "Healthy Minds Nepal",
+    description: {
+      EN: "Nepali-led organization building a supportive mental health ecosystem.",
+      NP: "मदत गर्ने मानसिक स्वास्थ्य प्रणाली निर्माण गर्दै नेपाली नेतृत्व संस्था।"
     },
-    {
-      id: "mhsn",
-      name: "Mental Health Society of Nepal",
-      description: "Non-profit focused on promoting mental health and psychosocial support.",
-      url: "https://mhsnepal.org",
-      category: "health",
-      scope: "local",
+    url: "https://healthyminds.com.np/our-team/",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "mhsn",
+    name: "Mental Health Society of Nepal",
+    description: {
+      EN: "Non-profit focused on promoting mental health and psychosocial support.",
+      NP: "मानसिक स्वास्थ्य र मनो सामाजिक समर्थन प्रवर्द्धन गर्ने गैर-नाफामूलक संस्था।"
     },
-    {
-      id: "maiti",
-      name: "Maiti Nepal",
-      description: "Anti-trafficking, shelter, legal aid, and empowerment for women and girls.",
-      url: "https://maitinepal.org/",
-      category: "rights1",
-      scope: "local",
+    url: "https://mhsnepal.org",
+    category: "health",
+    scope: "local",
+  },
+  {
+    id: "maiti",
+    name: "Maiti Nepal",
+    description: {
+      EN: "Anti-trafficking, shelter, legal aid, and empowerment for women and girls.",
+      NP: "महिला र बालिकाहरूलाई मानव तस्करी बिरुद्ध, आश्रय, कानुनी सहायता र सशक्तिकरण।"
     },
-    {
-      id: "fwld",
-      name: "FWLD",
-      description: "Forum for Women, Law & Development—legal rights, advocacy, and support.",
-      url: "https://fwld.org/",
-      category: "rights",
-      scope: "local",
+    url: "https://maitinepal.org/",
+    category: "rights",
+    scope: "local",
+  },
+  {
+    id: "fwld",
+    name: "FWLD",
+    description: {
+      EN: "Forum for Women, Law & Development—legal rights, advocacy, and support.",
+      NP: "महिला, कानून र विकासको लागि मञ्च — कानुनी अधिकार, वकालत र समर्थन।"
     },
-    {
-      id: "shakti",
-      name: "Shakti Samuha",
-      description: "Survivor-led organization against trafficking; protection and reintegration.",
-      url: "https://shaktisamuha.org.np/",
-      category: "rights",
-      scope: "local",
+    url: "https://fwld.org/",
+    category: "rights",
+    scope: "local",
+  },
+  {
+    id: "shakti",
+    name: "Shakti Samuha",
+    description: {
+      EN: "Survivor-led organization against trafficking; protection and reintegration.",
+      NP: "मानव तस्करी विरुद्ध बाँचेकाहरूले सञ्चालित संस्था; संरक्षण र पुनःसमायोजन।"
     },
-    {
-      id: "girlsnotbrides",
-      name: "Girls Not Brides (Nepal Partner)",
-      description: "Global network with Nepal partners focused on child marriage prevention.",
-      url: "https://www.girlsnotbrides.org/our-partnership/member-directory/protection-nepal/",
-      category: "rights2",
-      scope: "global",
+    url: "https://shaktisamuha.org.np/",
+    category: "rights",
+    scope: "local",
+  },
+  {
+    id: "girlsnotbrides",
+    name: "Girls Not Brides (Nepal Partner)",
+    description: {
+      EN: "Global network with Nepal partners focused on child marriage prevention.",
+      NP: "शिशु विवाह रोकथाममा केन्द्रित नेपाल साझेदारहरू सहित विश्वव्यापी नेटवर्क।"
     },
-    {
-      id: "wnf",
-      name: "Women NGOs Federation Nepal",
-      description: "Federation advocating for the rights and empowerment of women in Nepal.",
-      url: "https://wnfnepal.org.np",
-      category: "rights",
-      scope: "local",
+    url: "https://www.girlsnotbrides.org/our-partnership/member-directory/protection-nepal/",
+    category: "rights",
+    scope: "global",
+  },
+  {
+    id: "wnf",
+    name: "Women NGOs Federation Nepal",
+    description: {
+      EN: "Federation advocating for the rights and empowerment of women in Nepal.",
+      NP: "नेपालमा महिलाहरूको अधिकार र सशक्तीकरणका लागि संघ।"
     },
-    {
-      id: "samabikas",
-      name: "Samabikas Nepal",
-      description: "Civil society organization advancing equality, inclusion, and safety.",
-      url: "https://www.samabikas.org",
-      category: "rights",
-      scope: "local",
+    url: "https://wnfnepal.org.np",
+    category: "rights",
+    scope: "local",
+  },
+  {
+    id: "samabikas",
+    name: "Samabikas Nepal",
+    description: {
+      EN: "Civil society organization advancing equality, inclusion, and safety.",
+      NP: "समानता, समावेशीकरण, र सुरक्षा प्रवर्द्धन गर्ने नागरिक समाज संस्था।"
     },
-    {
-      id: "traveladvisory",
-      name: "Nepal Travel Advisory (US State Dept.)",
-      description: "Government-level safety and rights advisories for travelers in Nepal.",
-      url: "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nepal-travel-advisory.html",
-      category: "rights",
-      scope: "global",
+    url: "https://www.samabikas.org",
+    category: "rights",
+    scope: "local",
+  },
+  {
+    id: "traveladvisory",
+    name: "Nepal Travel Advisory (US State Dept.)",
+    description: {
+      EN: "Government-level safety and rights advisories for travelers in Nepal.",
+      NP: "नेपालमा यात्रा गर्नेहरूको लागि सरकारी स्तरको सुरक्षा र अधिकार सल्लाह।"
     },
-    {
-      id: "rukmini",
-      name: "Rukmini Foundation",
-      description: "Girls’ education and empowerment programs in Nepal.",
-      url: "https://www.rukminifoundation.org/",
-      category: "education",
-      scope: "local",
+    url: "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nepal-travel-advisory.html",
+    category: "rights",
+    scope: "global",
+  },
+  {
+    id: "rukmini",
+    name: "Rukmini Foundation",
+    description: {
+      EN: "Girls’ education and empowerment programs in Nepal.",
+      NP: "नेपालमा बालिकाहरूको शिक्षा र सशक्तिकरण कार्यक्रमहरू।"
     },
-    {
-      id: "wfn",
-      name: "The Women’s Foundation Nepal",
-      description: "Education, shelter, enterprise, and advocacy for women.",
-      url: "https://www.womenepal.org/",
-      category: "education",
-      scope: "local",
+    url: "https://www.rukminifoundation.org/",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "wfn",
+    name: "The Women’s Foundation Nepal",
+    description: {
+      EN: "Education, shelter, enterprise, and advocacy for women.",
+      NP: "महिलाहरूमाथि शिक्षा, आश्रय, उद्यम र वकालत।"
     },
-    {
-      id: "nyf",
-      name: "Nepal Youth Foundation",
-      description: "Education, health, and empowerment initiatives for children and youth.",
-      url: "https://www.nepalyouthfoundation.org/",
-      category: "education",
-      scope: "local",
+    url: "https://www.womenepal.org/",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "nyf",
+    name: "Nepal Youth Foundation",
+    description: {
+      EN: "Education, health, and empowerment initiatives for children and youth.",
+      NP: "बालबालिका र युवाहरूका लागि शिक्षा, स्वास्थ्य र सशक्तिकरण पहलहरू।"
     },
-    {
-      id: "womenlead",
-      name: "Women LEAD Nepal",
-      description: "Leadership development for young women and girls.",
-      url: "https://www.women-lead.org/",
-      category: "education",
-      scope: "local",
+    url: "https://www.nepalyouthfoundation.org/",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "womenlead",
+    name: "Women LEAD Nepal",
+    description: {
+      EN: "Leadership development for young women and girls.",
+      NP: "युवा महिलाहरू र बालिकाहरूका लागि नेतृत्व विकास।"
     },
-    {
-      id: "codefornepal",
-      name: "Code for Nepal",
-      description: "Digital literacy, open data, and tech empowerment.",
-      url: "https://codefornepal.org/",
-      category: "education",
-      scope: "local",
+    url: "https://www.women-lead.org/",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "codefornepal",
+    name: "Code for Nepal",
+    description: {
+      EN: "Digital literacy, open data, and tech empowerment.",
+      NP: "डिजिटल साक्षरता, खुला डाटा, र प्रविधि सशक्तिकरण।"
     },
-    {
-      id: "backward",
-      name: "Backward Society Education (BASE)",
-      description: "Educational empowerment and volunteering opportunities in Nepal.",
-      url: "https://nepalbase.org/volunteers-internship/",
-      category: "education",
-      scope: "local",
+    url: "https://codefornepal.org/",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "backward",
+    name: "Backward Society Education (BASE)",
+    description: {
+      EN: "Educational empowerment and volunteering opportunities in Nepal.",
+      NP: "नेपालमा शैक्षिक सशक्तिकरण र स्वयंसेवा अवसरहरू।"
     },
-    {
-      id: "ole",
-      name: "OLE Nepal",
-      description: "Open Learning Exchange Nepal providing free digital learning in schools.",
-      url: "https://www.olenepal.org",
-      category: "education",
-      scope: "local",
+    url: "https://nepalbase.org/volunteers-internship/",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "ole",
+    name: "OLE Nepal",
+    description: {
+      EN: "Open Learning Exchange Nepal providing free digital learning in schools.",
+      NP: "स्कूलहरूमा नि:शुल्क डिजिटल शिक्षा प्रदान गर्ने ओपन लर्निङ एक्सचेन्ज नेपाल।"
     },
-    {
-      id: "ncef",
-      name: "Nepalese Children’s Education Fund",
-      description: "Sponsors children’s education in Nepal.",
-      url: "https://www.nepalchildren.org",
-      category: "education",
-      scope: "local",
+    url: "https://www.olenepal.org",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "ncef",
+    name: "Nepalese Children’s Education Fund",
+    description: {
+      EN: "Sponsors children’s education in Nepal.",
+      NP: "नेपालमा बालबालिकाको शिक्षालाई प्रायोजन गर्ने संस्था।"
     },
-    {
-      id: "nta",
-      name: "Nepal Teachers Association",
-      description: "Union association supporting Nepalese teachers.",
-      url: "https://ntuc.org.np/affiliates/nepal-teachers-association-nta",
-      category: "education",
-      scope: "local",
+    url: "https://www.nepalchildren.org",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "nta",
+    name: "Nepal Teachers Association",
+    description: {
+      EN: "Union association supporting Nepalese teachers.",
+      NP: "नेपालका शिक्षकहरूको समर्थन गर्ने संघ संस्था।"
     },
-    {
-      id: "hotlines",
-      name: "Crisis & Hotlines",
-      description: "Suicide prevention, sexual assault, domestic violence, and substance use hotlines. Replace this card with your locally verified numbers and links.",
-      url: "#",
-      category: "emergency",
-      scope: "global",
+    url: "https://ntuc.org.np/affiliates/nepal-teachers-association-nta",
+    category: "education",
+    scope: "local",
+  },
+  {
+    id: "hotlines",
+    name: "Crisis & Hotlines",
+    description: {
+      EN: "Suicide prevention, sexual assault, domestic violence, and substance use hotlines. Replace this card with your locally verified numbers and links.",
+      NP: "आत्महत्या रोकथाम, यौन दुर्व्यवहार, घरेलु हिंसा, र पदार्थ प्रयोग हटलाइनहरू। यो कार्डलाई स्थानीय रूपमा प्रमाणित नम्बर र लिंकहरूसँग प्रतिस्थापन गर्नुहोस्।",
     },
-    {
-      id: "embassy",
-      name: "U.S. Embassy Nepal: Emergency Assistance",
-      description: "Consular emergency help info for U.S citizens in Nepal.",
-      url: "https://np.usembassy.gov/emergency-assistance/",
-      category: "emergency",
-      scope: "global",
+    url: "#",
+    category: "emergency",
+    scope: "global",
+  },
+  {
+    id: "embassy",
+    name: "U.S. Embassy Nepal: Emergency Assistance",
+    description: {
+      EN: "Consular emergency help info for U.S citizens in Nepal.",
+      NP: "नेपालमा अमेरिकन नागरिकहरूका लागि कन्सुलर आपतकालीन सहायता सूचना।"
     },
-    {
-      id: "touristpolice",
-      name: "Nepal Tourist Police",
-      description: "Tourist police services for safety, emergencies, and crime support.",
-      url: "https://www.tourism.gov.np/pages/tourist-police/9",
-      category: "emergency",
-      scope: "local",
+    url: "https://np.usembassy.gov/emergency-assistance/",
+    category: "emergency",
+    scope: "global",
+  },
+  {
+    id: "touristpolice",
+    name: "Nepal Tourist Police",
+    description: {
+      EN: "Tourist police services for safety, emergencies, and crime support.",
+      NP: "सुरक्षा, आपतकालीन, र अपराध सहायता को लागि पर्यटक प्रहरी सेवा।"
     },
-    {
-      id: "districtpolice",
-      name: "Nepal District Police Directory",
-      description: "Contact numbers for district police across Nepal. Quick access during emergencies.",
-      url: "https://common.usembassy.gov/wp-content/uploads/sites/27/2022/02/Tourist-Police-telephone-Directory.pdf",
-      category: "emergency",
-      scope: "local",
+    url: "https://www.tourism.gov.np/pages/tourist-police/9",
+    category: "emergency",
+    scope: "local",
+  },
+  {
+    id: "districtpolice",
+    name: "Nepal District Police Directory",
+    description: {
+      EN: "Contact numbers for district police across Nepal. Quick access during emergencies.",
+      NP: "नेपालभर जिल्लास्तर प्रहरी सम्पर्क नम्बरहरू। आपतकालीन अवस्थामा छिटो पहुँच।"
     },
-    {
-      id: "actionnepal",
-      name: "Emergency Relief Support (Action for Nepal)",
-      description: "Aid and relief response during emergencies across Nepal.",
-      url: "https://actionfornepal.org/why-emergency-relief-support/",
-      category: "emergency",
-      scope: "local",
+    url: "https://common.usembassy.gov/wp-content/uploads/sites/27/2022/02/Tourist-Police-telephone-Directory.pdf",
+    category: "emergency",
+    scope: "local",
+  },
+  {
+    id: "actionnepal",
+    name: "Emergency Relief Support (Action for Nepal)",
+    description: {
+      EN: "Aid and relief response during emergencies across Nepal.",
+      NP: "नेपालभर आपतकालीन समयमा सहायता र राहत प्रदान।"
     },
-    {
-      id: "mountsinai1",
-      name: "Strengthening Mental Health Education in Nepal",
-      description: "Article on improving mental health training and systems in Nepal.",
-      url: "https://health.mountsinai.org/blog/strengthening-mental-health-education-in-nepal/",
-      category: "community",
-      scope: "global",
+    url: "https://actionfornepal.org/why-emergency-relief-support/",
+    category: "emergency",
+    scope: "local",
+  },
+  {
+    id: "mountsinai1",
+    name: "Strengthening Mental Health Education in Nepal",
+    description: {
+      EN: "Article on improving mental health training and systems in Nepal.",
+      NP: "नेपालमा मानसिक स्वास्थ्य प्रशिक्षण र प्रणाली सुधारको बारेमा लेख।"
     },
-    {
-      id: "mountsinai2",
-      name: "Project ECHO Nepal: Emergency Care",
-      description: "Expanding emergency medical capacity in rural Nepal through tele-education.",
-      url: "https://health.mountsinai.org/blog/project-echo-launched-in-nepal-to-advance-emergency-care-in-rural-areas/",
-      category: "community",
-      scope: "global",
+    url: "https://health.mountsinai.org/blog/strengthening-mental-health-education-in-nepal/",
+    category: "community",
+    scope: "global",
+  },
+  {
+    id: "mountsinai2",
+    name: "Project ECHO Nepal: Emergency Care",
+    description: {
+      EN: "Expanding emergency medical capacity in rural Nepal through tele-education.",
+      NP: "टेलि-शिक्षणमार्फत ग्रामीण नेपालमा आपतकालीन चिकित्सा क्षमता विस्तार।"
     },
-    {
-      id: "nepalpolice",
-      name: "Nepal Police",
-      description: "Official Nepal Police website. Law enforcement and safety support.",
-      url: "https://www.nepalpolice.gov.np",
-      category: "emergency1",
-      scope: "local",
+    url: "https://health.mountsinai.org/blog/project-echo-launched-in-nepal-to-advance-emergency-care-in-rural-areas/",
+    category: "community",
+    scope: "global",
+  },
+  {
+    id: "nepalpolice",
+    name: "Nepal Police",
+    description: {
+      EN: "Official Nepal Police website. Law enforcement and safety support.",
+      NP: "नेपाल प्रहरीको आधिकारिक वेबसाइट। कानून प्रवर्तन र सुरक्षा सहयोग।"
     },
-    {
-      id: "girlswhocode",
-      name: "Girls Who Code",
-      description: "Free programs and content to learn to code (beginner to advanced).",
-      url: "https://girlswhocode.com/",
-      category: "education",
-      scope: "global",
+    url: "https://www.nepalpolice.gov.np",
+    category: "emergency",
+    scope: "local",
+  },
+  {
+    id: "girlswhocode",
+    name: "Girls Who Code",
+    description: {
+      EN: "Free programs and content to learn to code (beginner to advanced).",
+      NP: "कोड सिक्न नि:शुल्क कार्यक्रम र सामग्री (शुरुआती देखि उन्नत)।"
     },
-    {
-      id: "rtc",
-      name: "Rewriting the Code",
-      description: "Global community for college and early-career women in tech.",
-      url: "https://rewritingthecode.org/",
-      category: "education",
-      scope: "global",
+    url: "https://girlswhocode.com/",
+    category: "education",
+    scope: "global",
+  },
+  {
+    id: "rtc",
+    name: "Rewriting the Code",
+    description: {
+      EN: "Global community for college and early-career women in tech.",
+      NP: "टेक क्षेत्रमा कलेज र प्रारम्भिक करियर महिलाहरूका लागि विश्वव्यापी समुदाय।"
     },
-    {
-      id: "khan",
-      name: "Khan Academy",
-      description: "Free courses in math, science, computing, and more.",
-      url: "https://www.khanacademy.org/",
-      category: "education",
-      scope: "global",
+    url: "https://rewritingthecode.org/",
+    category: "education",
+    scope: "global",
+  },
+  {
+    id: "khan",
+    name: "Khan Academy",
+    description: {
+      EN: "Free courses in math, science, computing, and more.",
+      NP: "गणित, विज्ञान, कम्प्युटिङ, र अन्य नि:शुल्क कोर्सहरू।"
     },
-    {
-      id: "coursera",
-      name: "Coursera (Free Courses)",
-      description: "University courses—audit free; certificates optional.",
-      url: "https://www.coursera.org/",
-      category: "education",
-      scope: "global",
+    url: "https://www.khanacademy.org/",
+    category: "education",
+    scope: "global",
+  },
+  {
+    id: "coursera",
+    name: "Coursera (Free Courses)",
+    description: {
+      EN: "University courses—audit free; certificates optional.",
+      NP: "विश्वविद्यालय कोर्सहरू - नि:शुल्क अडिट; प्रमाणपत्र वैकल्पिक।"
     },
-    {
+    url: "https://www.coursera.org/",
+    category: "education",
+    scope: "global",
+  },
+  {
     id: "Nepal National Suicide Prevention Helpline",
     name: "Nepal National Suicide Prevention Helpline",
-    category: "community",
-    description: "National Suicide Prevention Helpline Service - Helping save lives across Nepal. Call 1166.", //hotline number
+    description: {
+      EN: "National Suicide Prevention Helpline Service - Helping save lives across Nepal. Call 1166.",
+      NP: "राष्ट्रिय आत्महत्या रोकथाम हेल्पलाइन सेवा - नेपालभर ज्यान बचाउनेमा मद्दत। कल गर्नुहोस् ११६६।"
+    },
     url: "https://www.who.int/nepal/news/detail/09-12-2022-Nepal-National-Suicide-Prevention-Helpline-Service-helping-save-lives",
+    category: "community",
+    scope: "local",
   },
   {
     id: "BetterHelp",
     name: "BetterHelp",
     category: "health",
-    description: "Global online counseling platform providing accessible mental health support.",
+   description: {
+      EN: "Global online counseling platform providing accessible mental health support.",
+      NP: "सुलभ मानसिक स्वास्थ्य समर्थन प्रदान गर्ने विश्वव्यापी अनलाइन परामर्श प्लेटफर्म।"
+    },
     url: "https://www.betterhelp.com/get-started/?go=true&utm_content=133524759310&utm_source=AdWords&utm_medium=Search_PPC_c&utm_term=betterhelp_b&network=g&placement=&target=&matchtype=b&utm_campaign=15234220559&ad_type=text&adposition=&kwd_id=kwd-299033048821&gad_source=1&gad_campaignid=15234220559&gbraid=0AAAAADqBHib7-Q9rKYnujLDMPZgQHPX47&gclid=Cj0KCQjw-4XFBhCBARIsAAdNOkugzqPwB0DRySDEZ3-cGhsgJ1tdROiD7rCCLE4E5qh5UeC8X0vKz8caAqdsEALw_wcB&not_found=1&gor=start",
   },
-
   ], []);
 
   const featured = useMemo(() => [
@@ -432,17 +555,33 @@ function App() {
           </button>
         ))}
       </nav>
-      <section id="emergency" className="emergency-banner" aria-label="Emergency">
-        <p>{t.emergencyBanner}</p>
-        <ul className="info-list">
-          <li>📞 Dial <strong>100</strong> for Police</li>
-          <li>📞 Dial <strong>101</strong> for Fire</li>
-          <li>🚑 Dial <strong>102</strong> for Ambulance</li>
-          <li>🚦 Dial <strong>103</strong> for Traffic Control</li>
-          <li>☎️ Dial <strong>197</strong> for Telephone Inquiry</li>
-        </ul>
-        <small className="muted">{t.hotlinesNote}</small>
-      </section>
+      <section id="emergency" className="emergency-banner" aria-label={t.emergencyHelp}>
+  {lang === "NP" ? (
+    <>
+      <p>{t.emergencyBanner}</p>
+      <ul className="info-list">
+        <li>📞 प्रहरीले फोन गर्नुहोस् <strong>१००</strong></li>
+        <li>📞 आगो निभाउन फोन गर्नुहोस् <strong>१०१</strong></li>
+        <li>🚑 एम्बुलेन्सका लागि फोन गर्नुहोस् <strong>१०२</strong></li>
+        <li>🚦 ट्राफिक कन्ट्रोलका लागि फोन गर्नुहोस् <strong>१०३</strong></li>
+        <li>☎️ फोन सोधपुछका लागि फोन गर्नुहोस् <strong>१९७</strong></li>
+      </ul>
+      <small className="muted">{t.hotlinesNote}</small>
+    </>
+  ) : (
+    <>
+      <p>{t.emergencyBanner}</p>
+      <ul className="info-list">
+        <li>📞 Dial <strong>100</strong> for Police</li>
+        <li>📞 Dial <strong>101</strong> for Fire</li>
+        <li>🚑 Dial <strong>102</strong> for Ambulance</li>
+        <li>🚦 Dial <strong>103</strong> for Traffic Control</li>
+        <li>☎️ Dial <strong>197</strong> for Telephone Inquiry</li>
+      </ul>
+      <small className="muted">{t.hotlinesNote}</small>
+    </>
+  )}
+</section>
 
       {activeCat && (
         <main className="content" aria-live="polite">
@@ -457,7 +596,7 @@ function App() {
                   <span aria-hidden="true">{r.logo ?? "📌"}</span>{" "}
                   <a href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a>
                 </h3>
-                <p className="card-desc">{r.description}</p>
+                <p className="card-desc">{r.description[lang]}</p>
               </li>
             ))}
           </ul>
@@ -478,7 +617,7 @@ function App() {
                   <span aria-hidden="true">{r.logo ?? "📌"}</span>{" "}
                   <a href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a>
                 </div>
-                <p className="card-desc">{r.description}</p>
+                <p className="card-desc">{r.description[lang]}</p>
               </li>
             ))}
           </ul>
