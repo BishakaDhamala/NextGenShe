@@ -426,22 +426,7 @@ function App() {
         </ul>
         <small className="muted">{t.hotlinesNote}</small>
       </section>
-      {!activeCat && (
-        <main id="main" className="content" role="main">
-          <h2 className="section-title">{t.featuredResources}</h2>
-          <ul className="card-grid">
-            {featured.map(r => (
-              <li key={r.id} className="card">
-                <div className="card-title">
-                  <span aria-hidden="true">{r.logo ?? "📌"}</span>{" "}
-                  <a href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a>
-                </div>
-                <p className="card-desc">{r.description}</p>
-              </li>
-            ))}
-          </ul>
-        </main>
-      )}
+
       {activeCat && (
         <main className="content" aria-live="polite">
           <h2 className="section-title">{CATS.find(c => c.key === activeCat)?.label}</h2>
