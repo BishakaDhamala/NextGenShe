@@ -447,7 +447,7 @@ function App() {
             {filtered.map(r => (
               <li key={r.id} className="card" data-scope={r.scope}>
                 <div className="card-badge" aria-label={r.scope}>
-                  {r.scope === "local" ? "NEPAL" : "GLOBAL"}
+                  {r.scope === "local" ? "🇳🇵" : "🌏"}
                 </div>
                 <h3 className="card-title">
                   <span aria-hidden="true">{r.logo ?? "📌"}</span>{" "}
