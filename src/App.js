@@ -107,7 +107,7 @@ function App() {
       name: "LIFE Nepal",
       description: "Child rights, education, and health projects in Nepal.",
       url: "https://lifenepal.org.np/about-us/",
-      category: "health",
+      category: "education",
       scope: "local",
     },
     {
@@ -323,7 +323,7 @@ function App() {
       name: "Nepal Police",
       description: "Official Nepal Police website. Law enforcement and safety support.",
       url: "https://www.nepalpolice.gov.np",
-      category: "community",
+      category: "emergency",
       scope: "local",
     },
     {
