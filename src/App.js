@@ -49,7 +49,7 @@ function App() {
     {
       id: "tpo",
       name: "TPO Nepal",
-      description: "Mental health and psychosocial support services in Nepal.",
+      description: "Dedicated to providing free, compassionate and confidential support by phone and text message (SMS). For everyone in Nepal who may need emotional support with anxiety, bullying, depression, self-harm, sexual abuse.",
       url: "https://www.tponepal.org",
       category: "health",
       scope: "local",
@@ -59,7 +59,7 @@ function App() {
       name: "KOSHISH Nepal",
       description: "Self-help and advocacy for mental health; rehabilitation and counseling.",
       url: "https://koshishnepal.org/",
-      category: "health",
+      category: "health2",
       scope: "local",
     },
     {
@@ -83,7 +83,7 @@ function App() {
       name: "Sano Sansar Initiative",
       description: "Youth-led organization for environment, health, and sustainability.",
       url: "https://www.sanosansar.org",
-      category: "health",
+      category: "education",
       scope: "local",
     },
     {
@@ -139,7 +139,7 @@ function App() {
       name: "Maiti Nepal",
       description: "Anti-trafficking, shelter, legal aid, and empowerment for women and girls.",
       url: "https://maitinepal.org/",
-      category: "rights",
+      category: "rights1",
       scope: "local",
     },
     {
@@ -163,7 +163,7 @@ function App() {
       name: "Girls Not Brides (Nepal Partner)",
       description: "Global network with Nepal partners focused on child marriage prevention.",
       url: "https://www.girlsnotbrides.org/our-partnership/member-directory/protection-nepal/",
-      category: "rights",
+      category: "rights2",
       scope: "global",
     },
     {
@@ -323,7 +323,7 @@ function App() {
       name: "Nepal Police",
       description: "Official Nepal Police website. Law enforcement and safety support.",
       url: "https://www.nepalpolice.gov.np",
-      category: "emergency",
+      category: "emergency1",
       scope: "local",
     },
     {
@@ -358,14 +358,30 @@ function App() {
       category: "education",
       scope: "global",
     },
+    {
+    id: "Nepal National Suicide Prevention Helpline",
+    name: "Nepal National Suicide Prevention Helpline",
+    category: "community",
+    description: "National Suicide Prevention Helpline Service - Helping save lives across Nepal. Call 1166.", //hotline number
+    url: "https://www.who.int/nepal/news/detail/09-12-2022-Nepal-National-Suicide-Prevention-Helpline-Service-helping-save-lives",
+  },
+  {
+    id: "BetterHelp",
+    name: "BetterHelp",
+    category: "health",
+    description: "Global online counseling platform providing accessible mental health support.",
+    url: "https://www.betterhelp.com/get-started/?go=true&utm_content=133524759310&utm_source=AdWords&utm_medium=Search_PPC_c&utm_term=betterhelp_b&network=g&placement=&target=&matchtype=b&utm_campaign=15234220559&ad_type=text&adposition=&kwd_id=kwd-299033048821&gad_source=1&gad_campaignid=15234220559&gbraid=0AAAAADqBHib7-Q9rKYnujLDMPZgQHPX47&gclid=Cj0KCQjw-4XFBhCBARIsAAdNOkugzqPwB0DRySDEZ3-cGhsgJ1tdROiD7rCCLE4E5qh5UeC8X0vKz8caAqdsEALw_wcB&not_found=1&gor=start",
+  },
+
   ], []);
 
   const featured = useMemo(() => [
+    resources.find((r) => r.category === "emergency1"),
+    resources.find((r) => r.category === "health2"),
+    resources.find((r) => r.category === "rights1"),
+    resources.find((r) => r.category === "rights2"),
     resources.find((r) => r.category === "health"),
     resources.find((r) => r.category === "education"),
-    resources.find((r) => r.category === "rights"),
-    resources.find((r) => r.category === "emergency"),
-    resources.find((r) => r.category === "community"),
   ].filter(Boolean), [resources]);
 
   const CATS = [
@@ -419,6 +435,7 @@ function App() {
       <section id="emergency" className="emergency-banner" aria-label="Emergency">
         <p>{t.emergencyBanner}</p>
         <ul className="info-list">
+          <li>📞 Dial <strong>100</strong> for Police</li>
           <li>📞 Dial <strong>101</strong> for Fire</li>
           <li>🚑 Dial <strong>102</strong> for Ambulance</li>
           <li>🚦 Dial <strong>103</strong> for Traffic Control</li>
