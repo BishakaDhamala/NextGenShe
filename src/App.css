@@ -199,6 +199,7 @@ html, body, #root, .App {
   background: var(--card);
   border-radius: 16px;
   padding: 16px;
+  padding-bottom: 32px;
   box-shadow: var(--shadow);
 }
 .card-badge {
@@ -226,6 +227,16 @@ html, body, #root, .App {
 .card-actions {
   display: flex;
   gap: 8px;
+}
+.card-badge {
+  position: absolute;
+  bottom: 10px;   
+  right: 10px;
+  font-size: 15px;    
+  letter-spacing: 0; 
+  padding: 0;         
+  background: transparent;  
+  border: none;             
 }
 .btn {
   border: 1px solid var(--border);
@@ -268,4 +279,44 @@ html, body, #root, .App {
 .muted {
   color: var(--muted);
   font-size: 13px;
+}
+.feature-btn {
+  position: fixed;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  background: var(--brand);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  z-index: 10000;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+.feature-btn:hover,
+.feature-btn:focus {
+  background: var(--brand-2);
+  outline: none;
+}
+
+.featured-panel {
+  position: fixed;
+  top: 10%;
+  right: 50px;
+  width: 500px;
+  height: 80%;
+  overflow-y: auto;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 20px;
+  z-index: 9999;
+}
+
+body.featured-open {
+  overflow: hidden;
 }

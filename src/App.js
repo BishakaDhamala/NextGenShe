@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import "./App.css";
 import "./index.css";
 
 function App() {
   const [lang, setLang] = useState("EN");
+  const [showFeatured, setShowFeatured] = useState(false);
   const t = useMemo(() => {
     const EN = {
       siteTitle: "A guide for every woman, everywhere.",
@@ -375,6 +376,7 @@ function App() {
     { key: "community", icon: "✨", label: t.nav.community },
   ];
 
+  
   const [activeCat, setActiveCat] = useState(null);
 
   const filtered = useMemo(() => {
@@ -459,6 +461,38 @@ function App() {
           </ul>
         </main>
       )}
+      {showFeatured && (
+        <main
+          className="content featured-panel"
+          role="region"
+          aria-live="polite"
+          aria-label="Featured Resources"
+        >
+          <h2 className="section-title">{t.featuredResources}</h2>
+          <ul className="card-grid">
+            {featured.map(r => (
+              <li key={r.id} className="card">
+                <div className="card-title">
+                  <span aria-hidden="true">{r.logo ?? "📌"}</span>{" "}
+                  <a href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a>
+                </div>
+                <p className="card-desc">{r.description}</p>
+              </li>
+            ))}
+          </ul>
+        </main>
+      )}
+
+      <button
+        className="feature-btn"
+        aria-expanded={showFeatured}
+        onClick={() => setShowFeatured(prev => !prev)}
+        aria-label="Toggle featured resources"
+        type="button"
+      >
+        {t.featuredResources}
+      </button>
+
       <footer className="site-footer" aria-label="Footer">
         <nav>
           <a href="/about">{t.footer.about}</a>
